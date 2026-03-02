@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <title>Engineer Your Future</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                container: {
+                    center: true,
+                    padding: "2rem",
+                },
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        border: "hsl(0 0% 20%)",
+                        input: "hsl(0 0% 20%)",
+                        ring: "hsl(24 100% 50%)",
+                        background: "hsl(0 0% 7%)",
+                        foreground: "hsl(0 0% 98%)",
+                        primary: {
+                            DEFAULT: "hsl(24 100% 50%)",
+                            foreground: "hsl(0 0% 100%)",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(0 0% 14%)",
+                            foreground: "hsl(0 0% 98%)",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(0 0% 18%)",
+                            foreground: "hsl(0 0% 64%)",
+                        },
+                        card: {
+                            DEFAULT: "hsl(0 0% 10%)",
+                            foreground: "hsl(0 0% 98%)",
+                        },
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.8s ease-out forwards',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'slide-up': {
+                            'from': { opacity: '0', transform: 'translateY(40px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 30px hsl(24 100% 50% / 0.3)' },
+                            '50%': { boxShadow: '0 0 60px hsl(24 100% 50% / 0.5)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(24,100%,50%)] to-[hsl(30,100%,60%)];
+            }
+        }
+        
+        body {
+            background-color: hsl(0 0% 7%);
+            color: hsl(0 0% 98%);
+        }
+        
+        .reveal-on-scroll {
+            opacity: 0;
+            transition: all 0.7s ease-out;
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateX(0) !important;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary/20">
+
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,hsl(24_100%_50%/0.15),transparent_60%)] pointer-events-none"></div>
+        
+        <div class="absolute top-20 left-10 w-20 h-20 border border-primary/30 rotate-45 animate-float opacity-50"></div>
+        <div class="absolute bottom-32 right-16 w-16 h-16 bg-primary/10 rounded-full animate-float" style="animation-delay: 2s;"></div>
+        
+        <div class="container mx-auto max-w-5xl relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 animate-[fade-in_0.8s_ease-out_forwards]">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-sm text-muted-foreground">Engineer Your Future by ΠΑΣΠ ΕΜΠ</span>
+            </div>
+            
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-up">
+                Επαγγελματικά Δικαιώματα & <br/>
+                <span class="text-gradient">Προοπτικές</span> Μηχανικών
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up" style="animation-delay: 0.2s;">
+                Rights • Innovation • Career: Ο χάρτης για την επόμενη μέρα.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-10 animate-slide-up" style="animation-delay: 0.3s;">
+                <div class="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg">
+                    <i data-lucide="calendar" class="w-5 h-5 text-primary"></i>
+                    <span class="text-sm">19 Μαρτίου 2026</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg">
+                    <i data-lucide="clock" class="w-5 h-5 text-primary"></i>
+                    <span class="text-sm">17:00</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-primary"></i>
+                    <span class="text-sm">ΑΙΘΟΥΣΑ ΣΥΝΕΔΡΙΑΣΕΩΝ,<br/>ΝΕΑ ΚΤΗΡΙΑ ΗΜΜΥ ΕΜΠ</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                <button onclick="document.getElementById('registration').scrollIntoView({behavior: 'smooth'})" 
+                        class="inline-flex items-center gap-2 bg-primary text-white hover:bg-orange-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 rounded-full h-14 px-10 text-lg font-semibold">
+                    Δήλωσε Συμμετοχή
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <button onclick="document.getElementById('agenda').scrollIntoView({behavior: 'smooth'})"
+                        class="inline-flex items-center gap-2 border-2 border-primary/20 bg-transparent text-primary hover:bg-primary/10 rounded-full h-14 px-10 text-lg font-semibold transition-all">
+                    Δες το Πρόγραμμα
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+    </section>
+
+    <section id="agenda" class="py-24 px-4 bg-secondary/30">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    Πρόγραμμα <span class="text-gradient">Εκδήλωσης</span>
+                </h2>
+                <p class="text-muted-foreground text-lg">3 ώρες γεμάτες γνώση και ευκαιρίες δικτύωσης.</p>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent hidden md:block"></div>
+                
+                <div class="space-y-6 md:space-y-8">
+                    
+                    <div class="relative flex flex-col md:flex-row gap-3 md:gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center z-10">
+                            <i data-lucide="clock" class="w-5 h-5 md:w-6 md:h-6 text-primary"></i>
+                        </div>
+                        <div class="flex-1 w-full bg-card rounded-xl border border-border p-5 md:p-6 hover:border-primary/30 transition-colors">
+                            <span class="text-sm text-primary font-semibold">1η Θεματική</span>
+                            <h3 class="font-display text-lg md:text-xl font-semibold mt-1 mb-2">Οδηγός Επιβίωσης Νέου Μηχανικού: Το Δίπλωμα του Μηχανικού & Ο Ρόλος του ΤΕΕ</h3>
+                            <p class="text-muted-foreground text-sm md:text-base">ΤΕΕ, Μπλοκάκι ή Μισθωτός; Ξεμπλέκουμε το κουβάρι των εργασιακών σχέσεων και υπερασπιζόμαστε την αξία του 5ετούς Διπλώματος (Integrated Master). Μάθε τα δικαιώματά σου, προστάτεψε την υπογραφή σου και δες πώς διεκδικούμε αξιοπρεπείς μισθούς μέσω Συλλογικών Συμβάσεων, κόντρα στην υποβάθμιση του κλάδου.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row gap-3 md:gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center z-10">
+                            <i data-lucide="clock" class="w-5 h-5 md:w-6 md:h-6 text-primary"></i>
+                        </div>
+                        <div class="flex-1 w-full bg-card rounded-xl border border-border p-5 md:p-6 hover:border-primary/30 transition-colors">
+                            <span class="text-sm text-primary font-semibold">2η Θεματική</span>
+                            <h3 class="font-display text-lg md:text-xl font-semibold mt-1 mb-2">Designing Your Path: Το σταυροδρόμι μετά το Πτυχίο</h3>
+                            <p class="text-muted-foreground text-sm md:text-base">Έρευνα, Μεταπτυχιακό ή Startup; Μετατρέπουμε το δίλημμα σε ευκαιρία. Δες πώς η εξειδικευμένη έρευνα οδηγεί σε κορυφαίες επαγγελματικές προοπτικές και πώς μια καινοτόμα ιδέα μπορεί να γίνει βιώσιμη επιχείρηση μέσα από το Πολυτεχνείο. Μην κάνεις μεταπτυχιακό "για να περάσει η ώρα", χτίσε το δικό σου Career Path σε τομείς που έχουν πραγματική ζήτηση.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row gap-3 md:gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center z-10">
+                            <i data-lucide="clock" class="w-5 h-5 md:w-6 md:h-6 text-primary"></i>
+                        </div>
+                        <div class="flex-1 w-full bg-card rounded-xl border border-border p-5 md:p-6 hover:border-primary/30 transition-colors">
+                            <span class="text-sm text-primary font-semibold">3η Θεματική</span>
+                            <h3 class="font-display text-lg md:text-xl font-semibold mt-1 mb-2">The Real Market: Corporate vs Startups</h3>
+                            <p class="text-muted-foreground text-sm md:text-base">Μια "μάχη" δύο κόσμων. Από τη μία η ιεραρχία των Πολυεθνικών και από την άλλη οι τρελοί ρυθμοί της Καινοτομίας. Ξεπερνάμε τα κλισέ και μιλάμε για Soft Skills, Portfolio και διαπραγμάτευση μισθού. Δες πώς να χτίσεις το προφίλ που ζητάει η αγορά σήμερα, είτε στοχεύεις σε μεγάλα τεχνικά έργα είτε στο επόμενο Tech Unicorn.</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="mt-12 md:mt-16 flex justify-center">
+                    <button onclick="document.getElementById('registration').scrollIntoView({behavior: 'smooth'})" 
+                            class="inline-flex items-center gap-2 bg-primary text-white hover:bg-orange-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 rounded-full h-14 px-10 text-lg font-semibold">
+                        Δήλωσε Συμμετοχή
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="topics" class="py-24 px-4 relative">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    Τι θα <span class="text-gradient">Μάθεις</span>
+                </h2>
+                <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+                    Μια ολοκληρωμένη εκδήλωση που καλύπτει όλα όσα χρειάζεται να γνωρίζεις.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(24_100%_50%/0.1)]">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <i data-lucide="scale" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">Η Δύναμη της Υπογραφής</h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">Μάθε τι σημαίνει νομικά η σφραγίδα σου, πώς το ΤΕΕ σε θωρακίζει και πώς μετατρέπεις την ευθύνη σε επαγγελματικό κύρος.</p>
+                </div>
+                <div class="group p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(24_100%_50%/0.1)]">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">Integrated Master</h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">Γιατί το 5ετές Ενιαίο Πτυχίο είναι η «κόκκινη γραμμή» μας; Το ανταγωνιστικό πλεονέκτημα απέναντι στα 3ετή Κολέγια.</p>
+                </div>
+                <div class="group p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(24_100%_50%/0.1)]">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">Corporate vs Startups</h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">Σταθερότητα σε Πολυεθνική ή Ρίσκο και Stock Options; Συγκρίνουμε κουλτούρες και μισθούς για να βρεις τι σου ταιριάζει.</p>
+                </div>
+                <div class="group p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(24_100%_50%/0.1)]">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <i data-lucide="users" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">Networking</h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">Γνωριμία με επαγγελματίες του κλάδου και συμφοιτητές.</p>
+                </div>
+                <div class="group p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(24_100%_50%/0.1)]">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <i data-lucide="file-check" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">Research & Impact</h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">Πώς η επιστήμη βγαίνει από το εργαστήριο και λύνει πραγματικά προβλήματα; Από τα μεγάλα ερευνητικά projects μέχρι την καινοτομία, μάθε πώς διαμορφώνουμε το μέλλον.</p>
+                </div>
+                <div class="group p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(24_100%_50%/0.1)]">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <i data-lucide="lightbulb" class="w-6 h-6 text-primary"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-2">Career Strategy</h3>
+                    <p class="text-muted-foreground text-sm leading-relaxed">Τι ψάχνουν οι recruiters; Χάραξε πορεία σε κλάδους αιχμής (AI, Ενέργεια) και μάθε να διαπραγματεύεσαι την αμοιβή σου.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration" class="py-16 md:py-24 px-2 sm:px-4 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,hsl(24_100%_50%/0.1),transparent_60%)] pointer-events-none"></div>
+        
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <div class="bg-gradient-to-br from-secondary to-card rounded-2xl border border-border p-3 sm:p-8 md:p-12 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6 mt-4 sm:mt-0">
+                    <span class="text-sm text-primary font-medium">Περιορισμένες Θέσεις</span>
+                </div>
+                
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    Μη Χάσεις την <span class="text-gradient">Ευκαιρία</span>
+                </h2>
+                
+                <p class="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto mb-8 px-2">
+                    Κάνε τώρα την εγγραφή σου και εξασφάλισε τη θέση σου.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 mb-8">
+                    <div class="flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="users" class="w-5 h-5 text-primary"></i> <span>Δωρεάν Συμμετοχή</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="gift" class="w-5 h-5 text-primary"></i> <span>Υλικό Παρουσίασης</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="award" class="w-5 h-5 text-primary"></i> <span>Πιστοποιητικό</span>
+                    </div>
+                </div>
+
+                <div class="w-full flex justify-center mt-6 sm:mt-8 -mx-1 sm:mx-0">
+                    <iframe src="https://forms.gle/NBHt1fhZgSUHRPTq6" 
+                            width="100%" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0" 
+                            class="w-full bg-white shadow-lg rounded-xl h-[1200px] md:h-[950px]"
+                            style="filter: invert(1) hue-rotate(180deg);">
+                        Φόρτωση…
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 px-4 border-t border-border">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="logo_footer.png" alt="Logo ΠΑΣΠ" class="w-30 h-10 object-contain">
+                </div>
+                <p class="text-muted-foreground text-sm text-center">
+                    © 2026 Engineer Your Future by ΠΑΣΠ ΕΜΠ.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
